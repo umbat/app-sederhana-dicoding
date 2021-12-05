@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">app-sederhana-dicoding</string>
+    <string name="players_name">Players Name</string>
+    <string name="detail">Details</string>
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
+    <string name="cardview">Cardview</string>
 </resources>
