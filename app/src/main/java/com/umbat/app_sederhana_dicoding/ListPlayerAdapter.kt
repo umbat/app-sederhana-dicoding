@@ -10,8 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ListPlayerAdapter(
     val listPlayers: List<Players>,
-    val onClickListener: (Players) -> Unit
-) :
+    val onClickListener: (Players) -> Unit) :
     RecyclerView.Adapter<ListPlayerAdapter.ListViewHolder>(){
 
     inner class ListViewHolder(view: View): RecyclerView.ViewHolder(view) {

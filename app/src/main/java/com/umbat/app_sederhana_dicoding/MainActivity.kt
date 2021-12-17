@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -30,5 +31,27 @@ class MainActivity : AppCompatActivity() {
         val listPlayerAdapter = ListPlayerAdapter(list)
         rvPlayers.adapter = listPlayerAdapter
 
+    }
+
+    private fun showRecyclerGrid() {
+        rvPlayers.layoutManager = GridLayoutManager(this)
+        val gridPlayerAdapter = GridPlayerAdapter(list)
+        rvPlayers.adapter = gridPlayerAdapter
+    }
+
+    private fun setMode(selectedMode: Int) {
+        when (selectedMode) {
+            R.id.action_list -> {
+                title = "Mode List"
+                showRecyclerList()
+            }
+            R.id.action_grid -> {
+                title = "Mode Grid"
+                showRecyclerGrid()
+            }
+            R.id.action_cardview -> {
+                title = "Mode Card View"
+            }
+        }
     }
 }
