@@ -30,13 +30,18 @@ class MainActivity : AppCompatActivity() {
         rvPlayers.layoutManager = LinearLayoutManager(this)
         val listPlayerAdapter = ListPlayerAdapter(list)
         rvPlayers.adapter = listPlayerAdapter
-
     }
 
     private fun showRecyclerGrid() {
-        rvPlayers.layoutManager = GridLayoutManager(this)
+        rvPlayers.layoutManager = GridLayoutManager(this, 2)
         val gridPlayerAdapter = GridPlayerAdapter(list)
         rvPlayers.adapter = gridPlayerAdapter
+    }
+
+    private fun showRecyclerCardView() {
+        rvPlayers.layoutManager = LinearLayoutManager(this)
+        val cardViewPlayerAdapter = CardViewPlayerAdapter(list)
+        rvPlayers.adapter = cardViewPlayerAdapter
     }
 
     private fun setMode(selectedMode: Int) {
@@ -51,6 +56,7 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.action_cardview -> {
                 title = "Mode Card View"
+                showRecyclerCardView()
             }
         }
     }

@@ -28,6 +28,6 @@ class GridPlayerAdapter(
     }
 
     inner class GridViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var imgPhoto: ImageView = itemView.findViewById(R.id.img_players)
+        var imgPhoto: ImageView = itemView.findViewById(R.id.iv_player)
     }
 }
