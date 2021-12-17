@@ -11,6 +11,13 @@ import com.bumptech.glide.request.RequestOptions
 class GridPlayerAdapter(
     val listPlayers: ArrayList<Players>) :
     RecyclerView.Adapter<GridPlayerAdapter.GridViewHolder>() {
+
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): GridViewHolder {
         val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_grid_player, viewGroup, false)
         return GridViewHolder(view)
@@ -21,6 +28,8 @@ class GridPlayerAdapter(
             .load(listPlayers[position].photo)
             .apply(RequestOptions().override(250,250))
             .into(holder.imgPhoto)
+
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listPlayers[holder.adapterPosition]) }
     }
 
     override fun getItemCount(): Int {
@@ -29,5 +38,9 @@ class GridPlayerAdapter(
 
     inner class GridViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imgPhoto: ImageView = itemView.findViewById(R.id.iv_player)
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: Players)
     }
 }

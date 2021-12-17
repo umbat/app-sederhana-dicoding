@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
-class CardViewPlayerAdapter (private val listPlayers: ArrayList<Players>): RecyclerView.Adapter<CardViewPlayerAdapter.CardViewViewHolder>() {
+class CardViewPlayerAdapter (
+    private val listPlayers: ArrayList<Players>):
+    RecyclerView.Adapter<CardViewPlayerAdapter.CardViewViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewPlayerAdapter.CardViewViewHolder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_cardview_player, parent, false)
