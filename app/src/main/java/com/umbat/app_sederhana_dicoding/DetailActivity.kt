@@ -18,6 +18,7 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Details"
 
         val ivDetailImage = findViewById<ImageView>(R.id.iv_details)
         val tvDetailFullName = findViewById<TextView>(R.id.tv_full_name)

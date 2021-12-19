@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">app-sederhana-dicoding</string>
+    <string name="app_name">The Players</string>
     <string name="players_name">Players Name</string>
     <string name="players_full_name">Players Full Name</string>
     <string name="place_of_birth">Place of Birth</string>

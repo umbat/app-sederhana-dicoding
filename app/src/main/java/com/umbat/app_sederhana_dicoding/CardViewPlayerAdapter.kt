@@ -45,7 +45,7 @@ class CardViewPlayerAdapter (
         }
         holder.itemView.setOnClickListener { Toast.makeText(
             holder.itemView.context,
-            "You choose" + listPlayers[holder.adapterPosition].name,
+            "You choose " + listPlayers[holder.adapterPosition].name,
             Toast.LENGTH_SHORT
         ).show()}
     }
