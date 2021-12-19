@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Appsederhanadicoding">
         <activity
+            android:name=".AboutActivity"
+            android:parentActivityName=".DetailActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".DetailActivity"
+            android:parentActivityName=".MainActivity"
+            android:exported="true"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

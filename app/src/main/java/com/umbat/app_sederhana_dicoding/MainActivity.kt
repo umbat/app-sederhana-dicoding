@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setActionBarTitle(title)
+        supportActionBar?.title = "Players"
 
         tvGreeting = findViewById(R.id.tv_greeting)
         rvPlayers = findViewById(R.id.rv_players)
@@ -96,7 +97,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showSelectedPlayer(players: Players) {
-        Toast.makeText(this, "You choose" + players.name, Toast.LENGTH_SHORT).show()
+        val intent= Intent(this, DetailActivity::class.java)
+        startActivity(intent)
     }
 
 }
