@@ -24,7 +24,7 @@ class AboutActivity : AppCompatActivity() {
             transformations(CircleCropTransformation())
         }
         aboutName.text = "Muhammad Farhan Pratama"
-        aboutKet.text = "Mahasiswa"
-        aboutDesc.text = "Lahir di Magelang pada 8 Juni 2000 dan sekarang sedang berkuliah di STMKG program studi Instruentasi Meteorologi Klimatologi dan Geofisika"
+        aboutKet.text = "farhanpratamax@gmail.com"
+        aboutDesc.text = "Lahir di Magelang pada 8 Juni 2000 dan sekarang sedang berkuliah di STMKG program studi Instrumentasi Meteorologi Klimatologi dan Geofisika"
     }
 }

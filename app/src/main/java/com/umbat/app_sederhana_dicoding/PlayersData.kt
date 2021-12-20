@@ -85,12 +85,26 @@ object PlayersData {
         "Álvaro Borja Morata Martín (Spanish pronunciation: [ˈalβaɾo moˈɾata]) is a Spanish professional footballer who plays as a striker for Serie A club Juventus, on loan from La Liga club Atlético Madrid, and the Spain national team. He began his career at Real Madrid, making his debut with the senior team in late 2010. After winning the 2013–14 UEFA Champions League, he moved to Juventus for €20 million in 2014, winning the double of Serie A and the Coppa Italia in both of his seasons in Turin. After being bought back by Real for €30 million, he won another La Liga and the UEFA Champions League in 2016–17 before joining Chelsea in 2017 for a club record fee of around £60 million. In January 2019, he moved to Atlético Madrid on loan and joined the club permanently on 1 July 2020. Morata moved back to Juventus on loan in 2020."
     )
 
+    private val playersLink = arrayOf(
+        "https://en.wikipedia.org/wiki/Wojciech_Szcz%C4%99sny",
+        "https://en.wikipedia.org/wiki/Matthijs_de_Ligt",
+        "https://en.wikipedia.org/wiki/Leonardo_Bonucci",
+        "https://en.wikipedia.org/wiki/Alex_Sandro",
+        "https://en.wikipedia.org/wiki/Danilo_(footballer,_born_July_1991)",
+        "https://en.wikipedia.org/wiki/Manuel_Locatelli",
+        "https://en.wikipedia.org/wiki/Weston_McKennie",
+        "https://en.wikipedia.org/wiki/Federico_Chiesa",
+        "https://en.wikipedia.org/wiki/Federico_Bernardeschi",
+        "https://en.wikipedia.org/wiki/Paulo_Dybala",
+        "https://en.wikipedia.org/wiki/%C3%81lvaro_Morata"
+    )
+
     private val playersPhoto = intArrayOf(
         R.drawable.szczesny,
         R.drawable.deligt,
         R.drawable.bonucci,
-        R.drawable.danilo,
         R.drawable.alexsandro,
+        R.drawable.danilo,
         R.drawable.locatelli,
         R.drawable.mckennie,
         R.drawable.chiesa,
@@ -109,6 +123,7 @@ object PlayersData {
             players.timeofbirth = playersTimeOfBirth[position]
             players.position = playersPosition[position]
             players.detail = playersDetails[position]
+            players.link = playersLink[position]
             players.photo = playersPhoto[position]
             list.add(players)
         }

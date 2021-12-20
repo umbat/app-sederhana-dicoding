@@ -1,9 +1,11 @@
 package com.umbat.app_sederhana_dicoding
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +28,7 @@ class DetailActivity : AppCompatActivity() {
         val tvDetailTimeOfBirth = findViewById<TextView>(R.id.tv_time_of_birth)
         val tvDetailPosition = findViewById<TextView>(R.id.tv_position)
         val tvDetailDetails = findViewById<TextView>(R.id.tv_details)
+        val btnPlayers = findViewById<Button>(R.id.btn_link)
 
         val players = intent.getParcelableExtra<Players>(EXTRA_PLAYERS)
 
@@ -38,6 +41,11 @@ class DetailActivity : AppCompatActivity() {
             tvDetailTimeOfBirth.text = players.timeofbirth
             tvDetailPosition.text = players.position
             tvDetailDetails.text = players.detail
+            btnPlayers.setOnClickListener {
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.setData(Uri.parse(players.link))
+                startActivity(intent)
+            }
 
             supportActionBar?.title = players.name
         }

@@ -11,5 +11,6 @@ data class Players(
     var timeofbirth: String = "",
     var position: String = "",
     var detail: String = "",
+    var link: String= "",
     var photo: Int = 0
 ) : Parcelable

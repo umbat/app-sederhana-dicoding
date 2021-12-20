@@ -76,9 +76,19 @@
             android:id="@+id/tv_details"
             style="@style/LongDetails"
             tools:text="@string/detail"/>
+
+        <Button
+            android:id="@+id/btn_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:text="Read More"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </LinearLayout>
-
-
-
 
 </ScrollView>
