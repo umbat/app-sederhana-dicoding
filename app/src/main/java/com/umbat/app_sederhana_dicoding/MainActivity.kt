@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun showSelectedPlayer(players: Players) {
         val intent= Intent(this, DetailActivity::class.java)
+        intent.putExtra(DetailActivity.EXTRA_PLAYERS, players)
         startActivity(intent)
     }
-
 }
