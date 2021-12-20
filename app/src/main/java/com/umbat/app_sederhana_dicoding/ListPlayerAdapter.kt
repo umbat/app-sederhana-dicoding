@@ -11,44 +11,35 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 class ListPlayerAdapter(
-    private val listPlayers: List<Players>
-    ) :
-    RecyclerView.Adapter<ListPlayerAdapter.ListViewHolder>(){
+    val listPlayers: List<Players>,
+    val listener: (Players) -> Unit
+    ):
+    RecyclerView.Adapter<ListPlayerAdapter.PlayersViewHolder>(){
 
-    private lateinit var onItemClickCallback: OnItemClickCallback
+    inner class PlayersViewHolder(view: View): RecyclerView.ViewHolder(view){
+        val iv_players = itemView.findViewById<ImageView>(R.id.iv_details)
 
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback
+        fun bind(players: Players){
+            iv_players.load(players.photo){
+                crossfade(true)
+
+                itemView.setOnClickListener { listener(players) }
+            }
+        }
     }
 
-    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
-        val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_list_player,viewGroup, false)
-        return ListViewHolder(view)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlayersViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_list_player, parent, false)
+        return PlayersViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val players = listPlayers[position]
+    override fun onBindViewHolder(holder: PlayersViewHolder, position: Int) {
+        val players = listPlayers[position] }
 
-        Glide.with(holder.itemView.context)
-            .load(players.photo)
-            .apply(RequestOptions().override(55,55))
-            .into(holder.ivImagePlayers)
-
-        holder.tvNamePlayers.text = players.name
-
-        holder.itemView.setOnClickListener {onItemClickCallback.onItemClicked(listPlayers[holder.adapterPosition]) }
-    }
 
     override fun getItemCount(): Int {
         return listPlayers.size
     }
 
-    inner class ListViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        val ivImagePlayers = itemView.findViewById<ImageView>(R.id.iv_player)
-        val tvNamePlayers = itemView.findViewById<TextView>(R.id.tv_player_name)
-    }
-
-    interface OnItemClickCallback {
-        fun onItemClicked(data: Players)
-    }
 }
